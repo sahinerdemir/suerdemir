@@ -663,10 +663,6 @@ body {
   left: 1rem;
 }
 
-.left-6 {
-  left: 1.5rem;
-}
-
 .right-24 {
   right: 6rem;
 }
@@ -685,6 +681,10 @@ body {
 
 .top-1\/2 {
   top: 50%;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .top-6 {
@@ -719,11 +719,6 @@ body {
   z-index: 9998;
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -751,6 +746,10 @@ body {
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-0\.5 {
+  margin-left: 0.125rem;
 }
 
 .ml-1 {
@@ -911,22 +910,12 @@ body {
   cursor: pointer;
 }
 
-.select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
   flex-direction: column;
-}
-
-.items-start {
-  align-items: flex-start;
 }
 
 .items-end {
@@ -986,21 +975,12 @@ body {
   overflow: hidden;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
 
 .border {
   border-width: 1px;
-}
-
-.border-y {
-  border-top-width: 1px;
-  border-bottom-width: 1px;
 }
 
 .border-b {
@@ -1027,6 +1007,10 @@ body {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+}
+
+.bg-black\/60 {
+  background-color: rgb(10 10 10 / 0.6);
 }
 
 .bg-black\/90 {
@@ -1091,11 +1075,6 @@ body {
   padding-right: 1.5rem;
 }
 
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .py-32 {
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -1141,11 +1120,6 @@ body {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .text-\[10px\] {
@@ -1224,11 +1198,6 @@ body {
   color: rgb(154 154 154 / var(--tw-text-opacity, 1));
 }
 
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(245 245 245 / var(--tw-text-opacity, 1));
@@ -1246,18 +1215,16 @@ body {
   mix-blend-mode: difference;
 }
 
-.backdrop-blur-xl {
-  --tw-backdrop-blur: blur(24px);
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.backdrop-blur-xl {
+  --tw-backdrop-blur: blur(24px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition-all {
@@ -1322,10 +1289,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .md\:left-12 {
-    left: 3rem;
-  }
-
   .md\:left-8 {
     left: 2rem;
   }
@@ -1393,11 +1356,6 @@ body {
     line-height: 1;
   }
 
-  .md\:text-8xl {
-    font-size: 6rem;
-    line-height: 1;
-  }
-
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1410,10 +1368,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .lg\:left-20 {
-    left: 5rem;
-  }
-
   .lg\:block {
     display: block;
   }

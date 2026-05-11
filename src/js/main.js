@@ -199,10 +199,36 @@ function initAnimations() {
     // --- LIGHTBOX ---
     const lightbox = document.getElementById("lightbox");
     const lbImg = document.getElementById("lightbox-img");
+    const lbVideo = document.getElementById("lightbox-video");
     const lbCounter = document.getElementById("lightbox-counter");
-    const imgSrcs = Array.from(slides).map(s => s.querySelector("img").src);
+    const lbZoom = document.getElementById("lightbox-zoom");
+
+    const mediaItems = Array.from(slides).map(s => {
+      if (s.dataset.type === "video") {
+        return { type: "video", src: s.dataset.src };
+      }
+      return { type: "image", src: s.querySelector("img").src };
+    });
     let currentIdx = 0;
     let zoomed = false;
+
+    function showMedia() {
+      const item = mediaItems[currentIdx];
+      if (item.type === "video") {
+        lbImg.classList.add("hidden");
+        lbVideo.classList.remove("hidden");
+        lbVideo.src = item.src;
+        lbVideo.play();
+        lbZoom.classList.add("hidden");
+      } else {
+        lbVideo.classList.add("hidden");
+        lbVideo.pause();
+        lbVideo.src = "";
+        lbImg.classList.remove("hidden");
+        lbImg.src = item.src;
+        lbZoom.classList.remove("hidden");
+      }
+    }
 
     function openLightbox(idx) {
       currentIdx = idx;
@@ -210,25 +236,25 @@ function initAnimations() {
       lightbox.classList.remove("hidden");
       document.body.style.overflow = "hidden";
       gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.3 });
-      gsap.fromTo(lbImg, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power2.out" });
     }
 
     function closeLightbox() {
+      lbVideo.pause();
       gsap.to(lightbox, {
         opacity: 0, duration: 0.25,
         onComplete: () => {
           lightbox.classList.add("hidden");
           document.body.style.overflow = "";
+          lbVideo.src = "";
           resetZoom();
         }
       });
     }
 
     function updateLightbox() {
-      lbImg.src = imgSrcs[currentIdx];
-      lbCounter.textContent = (currentIdx + 1) + " / " + imgSrcs.length;
+      showMedia();
+      lbCounter.textContent = (currentIdx + 1) + " / " + mediaItems.length;
       resetZoom();
-      gsap.fromTo(lbImg, { opacity: 0.5, x: 0 }, { opacity: 1, duration: 0.25 });
     }
 
     function resetZoom() {
@@ -242,6 +268,7 @@ function initAnimations() {
     }
 
     function toggleZoom() {
+      if (mediaItems[currentIdx].type === "video") return;
       zoomed = !zoomed;
       lbImg.style.transform = zoomed ? "scale(2)" : "scale(1)";
       lbImg.style.cursor = zoomed ? "zoom-out" : "zoom-in";
@@ -263,11 +290,11 @@ function initAnimations() {
     document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
     document.getElementById("lightbox-bg").addEventListener("click", closeLightbox);
     document.getElementById("lightbox-prev").addEventListener("click", () => {
-      currentIdx = (currentIdx - 1 + imgSrcs.length) % imgSrcs.length;
+      currentIdx = (currentIdx - 1 + mediaItems.length) % mediaItems.length;
       updateLightbox();
     });
     document.getElementById("lightbox-next").addEventListener("click", () => {
-      currentIdx = (currentIdx + 1) % imgSrcs.length;
+      currentIdx = (currentIdx + 1) % mediaItems.length;
       updateLightbox();
     });
     document.getElementById("lightbox-zoom").addEventListener("click", toggleZoom);
@@ -276,8 +303,8 @@ function initAnimations() {
     document.addEventListener("keydown", (e) => {
       if (lightbox.classList.contains("hidden")) return;
       if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") { currentIdx = (currentIdx - 1 + imgSrcs.length) % imgSrcs.length; updateLightbox(); }
-      if (e.key === "ArrowRight") { currentIdx = (currentIdx + 1) % imgSrcs.length; updateLightbox(); }
+      if (e.key === "ArrowLeft") { currentIdx = (currentIdx - 1 + mediaItems.length) % mediaItems.length; updateLightbox(); }
+      if (e.key === "ArrowRight") { currentIdx = (currentIdx + 1) % mediaItems.length; updateLightbox(); }
     });
   }
 
