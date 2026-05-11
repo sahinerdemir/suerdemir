@@ -1,27 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// --- LOADER ---
-const loader = document.getElementById("loader");
-const loaderText = document.getElementById("loader-text");
-
-gsap.to(loaderText, {
-  opacity: 1,
-  duration: 0.8,
-  ease: "power2.out",
-  onComplete: () => {
-    gsap.to(loaderText, {
-      opacity: 0,
-      y: -30,
-      duration: 0.5,
-      delay: 0.3,
-      ease: "power2.in",
-      onComplete: () => {
-        loader.classList.add("hidden");
-        initAnimations();
-      },
-    });
-  },
-});
+initAnimations();
 
 // --- CUSTOM CURSOR ---
 const cursor = document.getElementById("cursor");
