@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #f5f5f5;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #f5f5f5;
+    color: #0a0a0a;
+  }
+}
+
+@layer components {
+  .section-fullscreen {
+    @apply min-h-screen w-full relative flex items-center justify-center;
+  }
+
+  .text-reveal {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .text-reveal.revealed {
+    clip-path: inset(0 0% 0 0);
+  }
+
+  .img-parallax {
+    will-change: transform;
+  }
+
+  .magnetic-btn {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .line-reveal {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .gallery-item {
+    @apply overflow-hidden cursor-pointer;
+  }
+
+  .gallery-item img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .stat-item {
+    @apply border-l border-gray-600 pl-6;
+  }
+}
