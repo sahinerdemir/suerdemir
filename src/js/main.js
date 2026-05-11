@@ -119,6 +119,14 @@ function initAnimations() {
     ease: "power3.out",
   });
 
+  gsap.from("#hero-stats", {
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    delay: 0.7,
+    ease: "power3.out",
+  });
+
   gsap.from("#scroll-indicator", {
     opacity: 0,
     y: 20,
