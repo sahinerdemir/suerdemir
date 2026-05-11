@@ -651,16 +651,16 @@ body {
   bottom: 1.5rem;
 }
 
-.left-0 {
-  left: 0px;
-}
-
 .left-1\/2 {
   left: 50%;
 }
 
 .left-4 {
   left: 1rem;
+}
+
+.left-6 {
+  left: 1.5rem;
 }
 
 .right-24 {
@@ -673,10 +673,6 @@ body {
 
 .right-6 {
   right: 1.5rem;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .top-1\/2 {
@@ -796,6 +792,10 @@ body {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-28 {
   height: 7rem;
 }
@@ -870,6 +870,10 @@ body {
 
 .max-w-4xl {
   max-width: 56rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
 }
 
 .max-w-6xl {
@@ -996,6 +1000,10 @@ body {
   border-color: rgb(26 26 26 / var(--tw-border-opacity, 1));
 }
 
+.border-white\/10 {
+  border-color: rgb(245 245 245 / 0.1);
+}
+
 .border-white\/30 {
   border-color: rgb(245 245 245 / 0.3);
 }
@@ -1007,6 +1015,10 @@ body {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+}
+
+.bg-black\/50 {
+  background-color: rgb(10 10 10 / 0.5);
 }
 
 .bg-black\/60 {
@@ -1083,11 +1095,6 @@ body {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .py-8 {
@@ -1215,6 +1222,12 @@ body {
   mix-blend-mode: difference;
 }
 
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 .backdrop-blur-sm {
   --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1309,6 +1322,10 @@ body {
     display: none;
   }
 
+  .md\:h-16 {
+    height: 4rem;
+  }
+
   .md\:h-36 {
     height: 9rem;
   }
@@ -1340,6 +1357,11 @@ body {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:pb-32 {
